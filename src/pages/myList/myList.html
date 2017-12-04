@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      My Baby Name List
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item ion-item *ngFor="let item of items">
+      <ion-thumbnail item-start>
+        <img *ngIf=" item.gender == 'F' " src="assets/img/female.png">
+        <img *ngIf=" item.gender == 'M' " src="assets/img/male.png">
+      </ion-thumbnail>
+      <h2>{{ item.name }}</h2>
+      <button ion-button clear item-end (click)="itemDescription(item.name, item.description)"> Description</button>
+      <button ion-button item-end style="background-color: red;" (click)="removeFromList(item.id)">Remove</button>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

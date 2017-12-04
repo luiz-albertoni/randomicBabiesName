@@ -1,0 +1,39 @@
+<div class="mymodal">  <ion-header>
+    <ion-toolbar>
+
+      <ion-buttons start>
+          <button ion-button (click)="getBabyName()">
+            <ion-icon name="refresh"></ion-icon>
+          </button>
+        <button ion-button (click)="dismiss()">
+          <span ion-text color="primary" >Cancel</span>
+        </button>
+      </ion-buttons>
+      <ion-title>Guru Flavio </ion-title>
+
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content padding>
+
+  <ion-card>
+    <div class="container">
+      <img src="assets/img/Flavio_says.jpeg " width="310" height="310" alt="Smiley face" align="middle">
+      <div class="baloon">{{baby.name}}</div>
+    </div>
+    <ion-card-content>
+      <ion-card-title>
+        Description
+        </ion-card-title>
+          <p>
+            {{baby.description}}
+          </p>
+      <br>
+      <button style="background-color: #4CAF50;" ion-button full (click)="addToMyList()">
+          Add to my list
+      </button>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+</div>

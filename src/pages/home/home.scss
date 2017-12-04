@@ -1,3 +1,24 @@
 page-home {
 
 }
+
+.container {
+    position: relative;
+    text-align: center;
+    color: black;
+    font-size:150%;
+    font-weight: bold;
+
+}
+/* Top right text */
+.baloon {
+    position: absolute;
+    top: 39%;
+    right: 35px;
+}
+
+.toast-error {
+  > div{
+       background-color:red!important;
+   }
+}

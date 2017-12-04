@@ -1,17 +1,63 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Contact
+      Profile Page
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+
+<ion-content padding>
+
+ <h2>Insert/Update User</h2>
+<br>
+ <ion-card>
+   <ion-card-content>
+     The app will use this information for calculate your baby name.
+   </ion-card-content>
+ </ion-card>
+<br>
+ <form [formGroup]="todo" (ngSubmit)="logForm()">
   <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
+
     <ion-item>
-      <ion-icon name="ionic" item-left></ion-icon>
-      @ionicframework
+    <ion-label fixed>Nome</ion-label>
+     <ion-input [(ngModel)]="userInfo.nome"    type="text"
+                formControlName="nome"
+                id="nome" spellcheck="false" autocapitalize="off">
+     </ion-input>
     </ion-item>
-  </ion-list>
+
+      <ion-item>
+        <ion-label fixed>Sobrenome</ion-label>
+        <ion-input [(ngModel)]="userInfo.sobrenome"   type="text"
+                    formControlName="sobrenome"
+                   id="sobrenome" spellcheck="false" autocapitalize="off">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Signo</ion-label>
+        <ion-input [(ngModel)]="userInfo.signo"  type="text"
+                   formControlName="signo"
+                   id="signo" spellcheck="false" autocapitalize="off">
+        </ion-input>
+      </ion-item>
+
+      <!--ion-item>
+        <ion-label fixed>Data nascismento</ion-label>
+        <ion-input [(ngModel)]="userInfo.date"   type="date"
+                    formControlName="date"
+                   id="date" spellcheck="false" autocapitalize="off">
+        </ion-input>
+      </ion-item-->
+
+      <ion-item>
+        <ion-label>Date</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" id="date" pickerFormat="DD MMMM YYYY" formControlName="date" [(ngModel)]="userInfo.date"  ></ion-datetime>
+      </ion-item>
+
+    </ion-list>
+    <button ion-button type="submit" [disabled]="!todo.valid">Submit</button>
+</form>
 </ion-content>
